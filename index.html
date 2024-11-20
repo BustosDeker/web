@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          darkMode: 'class', 
+        }
+      </script>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="bg-white-700 dark:bg-gray-900 text-black dark:text-white transition-colors duration-500 border-2">
+    <div class="mx-auto">
+        <nav class=" fixed bg-slate-800 dark:bg-stone-950 text-black dark:text-white transition-colors duration-500 border-2 flex justify-between lg:justify-start items-center border-2 border-white gap-5">
+            <div class="logo p-2 w-1/6">
+                <img src="img/icon-removebg-preview.png" width="120" alt="Logo">
+            </div>
+        
+            <!-- Links del menú -->
+            <div class="links lg:block hidden w-1/6 md:w-4/6">
+                <ul class="flex menu gap-5">
+                    <li><a href="#" class="link text-white dark:text-gray-300 block p-5 font-bold hover:text-yellow-500">Inicio</a></li>
+                    <li><a href="#fuego" class="text-white dark:text-gray-300 block p-5 font-bold hover:text-yellow-500">Fuego</a></li>
+                    <li><a href="#agua" class="text-white dark:text-gray-300 block p-5 font-bold hover:text-yellow-500">Agua</a></li>
+                    <li><a href="#hierba" class="text-white dark:text-gray-300 block p-5 font-bold hover:text-yellow-500">Hierba</a></li>
+                    <li><a href="#gimnasio" class="text-white dark:text-gray-300 block p-5 font-bold hover:text-yellow-500">Gimnasios</a>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="relative w-2/5 lg:w-1/6 md:w-2/6">
+                <form class="flex items-center">
+                    <!-- Campo de entrada -->
+                    <input type="text" placeholder="Buscar..." class="w-full pl-4 pr-12 py-2 rounded-full bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+                    
+                    <!-- Botón de búsqueda con lupa -->
+                    <button type="submit" class="absolute right-2 bg-yellow-500 p-2 rounded-full hover:bg-yellow-600 ">
+                        <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a7 7 0 100 14 7 7 0 000-14zM21 21l-4.35-4.35" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        
+            <!-- Botón de idioma e iniciar sesión -->
+            <div class="flex items-center space-x-4 m-4">
+                <button id="theme-toggle" class="text-white dark:text-gray-300 p-2 ml-4">
+                    <img class="h-8" src="img/modo-oscuro.png" alt="">
+                 </button>
+                <!-- Botón de iniciar sesión -->
+                <a href="#">
+                    <img class="h-6 w-10 lg:h-8 lg:w-10" src="img/usuario.png" alt="">
+                </a>
+            </div>
+
+            
+        
+            <!-- Menú móvil -->
+            <div class="block lg:hidden">
+                <a href="#" class="text-white p-10 font-bold hover:text-yellow-500" id="mobile-menu"><img src="img/menu.png" alt="Menú"></a>
+                <ul class="mobile-links hidden w-full absolute p-10 z-10 left-0 text-center bg-slate-800 dark:bg-stone-950 text-black dark:text-white transition-colors duration-500 border-2">
+                    <li><a href="#" class="link text-white dark:text-gray-300 block p-5 font-bold hover:text-yellow-500">Inicio</a></li>
+                    <li><a href="#fuego" class="text-white dark:text-gray-300 block p-5 font-bold hover:text-yellow-500">Fuego</a></li>
+                    <li><a href="#agua" class="text-white dark:text-gray-300 block p-5 font-bold hover:text-yellow-500">Agua</a></li>
+                    <li><a href="#hierba" class="text-white dark:text-gray-300 block p-5 font-bold hover:text-yellow-500">Hierba</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+
+        <!-- Main Section -->
+        <section class="bg-gray-200 dark:bg-gray-950 text-black dark:text-white transition-colors duration-500 border-2 flex flex-col md:flex-row items-center justify-between py-10 md:py-20 px-4 md:px-10 ">
+            <!-- Text Content -->
+            <div class="text-center md:text-left p-2">
+                <h1 class="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 mt-10 lg:mt-0">POKEMON</h1>
+                
+                <h2 class="text-2xl md:text-3xl text-red-400 mb-6">Criaturas Mágicas</h2>
+                <p class="text-black dark:text-white max-w-sm md:max-w-md mx-auto md:mx-0 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non laboriosam necessitatibus delectus unde iste dolor obcaecati.</p>
+                 <!-- Video promocional -->
+                <div class="relative w-full h-20 p-2 border-2" style="padding-top: 56.25%;">
+                    <video autoplay loop controls class="absolute top-0 left-0 w-full h-full object-cover">
+                    <source src="videos/pokemon.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            
+                </div>
+                <div class="flex justify-center md:justify-start space-x-4 p-10">
+                    <button class="bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700">Explore</button>
+                    <button class="bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700">More</button>
+                </div>
+                <a href="https://wa.me/1234567890" target="_blank" class="bottom-4 right-4  hover:bg-stone-600 text-white rounded-full shadow-lg flex items-center justify-center h-10 w-10 lg:h-20 lg:w-20" style=" position: fixed;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="h-10 w-10 lg:h-20 lg:w-20">
+                </a>
+            </div>
+
+            <!-- Character Images with torus background -->
+            <div class="torus-background characters">
+                <a href="https://www.pokemon.com/us/pokedex/blaziken" target="_blank">
+                    <img id="character1" src="img/stat-blaziken.png" alt="Blaziken">
+                </a>
+                <a href="https://www.pokemon.com/us/pokedex/ceruledge" target="_blank">
+                    <img id="character2" src="img/stat-ceruledge.png" alt="Ceruledge">
+                </a>
+                <a href="https://www.pokemon.com/us/pokedex/lucario" target="_blank">
+                    <img id="character3" src="img/stat-lucario.png" alt="Lucario">
+                </a>
+                <a href="https://www.pokemon.com/us/pokedex/miraidon" target="_blank">
+                    <img id="character4" src="img/stat-miraidon.png" alt="Miraidon">
+                </a>
+                <a href="https://www.pokemon.com/us/pokedex/scizor" target="_blank">
+                    <img id="character5" src="img/stat-scizor.png" alt="Scizor">
+                </a>
+                <a href="https://www.pokemon.com/us/pokedex/greninja" target="_blank">
+                    <img id="character6" src="img/stat-greninja.png" alt="Greninja">
+                </a>
+                <a href="https://www.pokemon.com/us/pokedex/ho-oh" target="_blank">
+                    <img id="character7" src="img/stat-ho-oh.png" alt="Ho-Oh">                    
+                </a>
+                <a href="https://www.pokemon.com/us/pokedex/meowscarada" target="_blank">
+                    <img id="character8" src="img/stat-meowscarada.png" alt="Meowscarada">                    
+                </a>
+                <a href="https://www.pokemon.com/us/pokedex/metagross" target="_blank">
+                    <img id="character9" src="img/stat-metagross.png" alt="Metagross">                    
+                </a>
+                <a href="https://www.pokemon.com/us/pokedex/gengar" target="_blank">
+                    <img id="character10" src="img/stat-gengar.png" alt="Gengar">                    
+                </a>
+            </div>
+        </section>
+        <script src="js/automatico.js"></script>    
+        
+        
+
+        <section>
+            <div class="relative w-full max-w-6xl mx-auto overflow-hidden m-8">
+                <!-- Carrusel -->
+                <div id="pokemonCarousel" class="flex transition-transform duration-500 ease-in-out gap-1 m-30 lg:gap-4 lg:m-8">
+                    <!-- Tarjetas de Pokémon -->
+                    <div class="flex-shrink-0 w-64 p-4">
+                        <div class="p-4 text-center">
+                            <img src="img/l1-removebg-preview.png" alt="Pokemon 1" class="mx-auto w-40 h-40">
+                            <h2 class="mt-4 font-bold">Pokemon 1</h2>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-64 p-4">
+                        <div class="p-4 text-center">
+                            <img src="img/l2-removebg-preview.png" alt="Pokemon 2" class="mx-auto w-40 h-40">
+                            <h2 class="mt-4 font-bold">Pokemon 2</h2>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-64 p-4">
+                        <div class="p-4 text-center">
+                            <img src="img/l3-removebg-preview.png" alt="Pokemon 3" class="mx-auto w-40 h-40">
+                            <h2 class="mt-4 font-bold">Pokemon 3</h2>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-64 p-4">
+                        <div class="p-4 text-center">
+                            <img src="img/l4-removebg-preview.png" alt="Pokemon 4" class="mx-auto w-40 h-40">
+                            <h2 class="mt-4 font-bold">Pokemon 4</h2>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-64 p-4">
+                        <div class="p-4 text-center">
+                            <img src="img/l5-removebg-preview.png" alt="Pokemon 5" class="mx-auto w-40 h-40">
+                            <h2 class="mt-4 font-bold">Pokemon 5</h2>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-64 p-4">
+                        <div class="p-4 text-center">
+                            <img src="img/l6-removebg-preview.png" alt="Pokemon 6" class="mx-auto w-40 h-40">
+                            <h2 class="mt-4 font-bold">Pokemon 6</h2>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-64 p-4">
+                        <div class="p-4 text-center">
+                            <img src="img/l7-removebg-preview.png" alt="Pokemon 7" class="mx-auto w-40 h-40">
+                            <h2 class="mt-4 font-bold">Pokemon 7</h2>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-64 p-4">
+                        <div class="p-4 text-center">
+                            <img src="img/l8-removebg-preview.png" alt="Pokemon 8" class="mx-auto w-40 h-40">
+                            <h2 class="mt-4 font-bold">Pokemon 8</h2>
+                        </div>
+                    </div>
+                    
+                </div>
+            
+                <!-- Controles -->
+                <button id="prevPokemon" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-gray-700">
+                    &#10094;
+                </button>
+                <button id="nextPokemon" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-gray-700">
+                    &#10095;
+                </button>
+            </div>
+            
+            
+            <script>
+                const pokemonCarousel = document.getElementById('pokemonCarousel');
+                const nextPokemon = document.getElementById('nextPokemon');
+                const prevPokemon = document.getElementById('prevPokemon');
+                const cardWidth = 256; // Ancho de cada tarjeta en px (w-64)
+                const gap = 16; // Espacio entre las tarjetas
+                let itemsToShow = window.innerWidth < 768 ? 2 : 4; // Cambiar según el tamaño de la pantalla
+                const totalCards = pokemonCarousel.children.length;
+                let currentCard = 0;
+            
+                const updateCarousel = () => {
+                    const offset = currentCard * (cardWidth + gap);
+                    pokemonCarousel.style.transform = `translateX(-${offset}px)`;
+                };
+            
+                nextPokemon.addEventListener('click', () => {
+                    if (currentCard < totalCards - itemsToShow) {
+                        currentCard++;
+                    }
+                    updateCarousel();
+                });
+            
+                prevPokemon.addEventListener('click', () => {
+                    if (currentCard > 0) {
+                        currentCard--;
+                    }
+                    updateCarousel();
+                });
+            
+                // Ajustar el número de tarjetas visibles según el tamaño de la pantalla
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth < 768) {
+                        itemsToShow = 2;
+                    } else {
+                        itemsToShow = 4;
+                    }
+                    updateCarousel();
+                });
+            </script>
+            
+        </section>
+        
+        
+        
+        
+        <section class="">
+            <div id="fuego" class="p-10 "></div>
+            <h2 class="text-center text-4xl font-bold text-red-500 p-10"> Pokémon - Tipo Fuego</h2>
+            <div class="pokemon-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-8 py-8" id="pokemonContainerFire"></div>
+            <div class="text-center">
+            <button class="load-more-btn bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full mt-4 m-10" id="loadMoreFire">Cargar más Pokémon</button>
+            </div>
+        </section>
+        
+        <div class="">
+            <div id="agua" class="p-10 "></div>
+            <h2  class="text-center text-4xl font-bold text-blue-500 p-10">Pokémon - Tipo Agua</h2>
+            <div class="pokemon-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-8 py-8" id="pokemonContainerWater"></div>
+            <div class="text-center">
+            <button class="load-more-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full mt-4 m-10" id="loadMoreWater">Cargar más Pokémon</button>
+            </div>
+        </div>
+
+        <div class="">
+            <div id="hierba" class="p-10 "></div>
+            <h2  class="text-center text-4xl font-bold text-green-500 p-10">Pokémon - Tipo Hierba</h2>
+            <div class="pokemon-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-8 py-8" id="pokemonContainerGrass"></div>
+            <div class="text-center">
+            <button class="load-more-btn bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full mt-4 m-10" id="loadMoreGrass">Cargar más Pokémon</button>
+            </div>
+        </div>
+
+        <!-- Sección de tarjetas de Pokémon Tipo Hierba -->
+        
+
+        <section id="gimnasio" class="items-center justify-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 text-center p-5 ">LíDERES DE GIMNASIO</h1>
+            <h2 class="text-2xl md:text-3xl text-red-400 mb-6 m-4">Líderes de Kanto</h2>
+
+            <div class="table-container p-5">
+                <table class="centered-table">
+                    <thead>
+                        <tr>
+                            <th>Lider</th>
+                            <th>Tipo</th>
+                            <th>Lugar</th>
+                            <th>Medalla</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center w-20">
+                                <div class="flex flex-col items-center">
+                                    <img src="img/165px-VS_Brock_Masters.png" alt="">
+                                    <p>Brock</p>
+                                </div>
+                            </td>
+                            <td > 
+                                <div class="flex flex-col items-center">
+                                    <img src="img/Tipo_roca.gif" alt="">
+                                </div>
+                            </td>
+                            <td>Ciudad Plateada</td>
+                            <td>Fila 1, Col 4</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-blue-200 text-center">
+                                <div class="flex flex-col items-center">
+                                    <img src="img/165px-VS_Misty_Masters.png" alt="">
+                                    <p>Misty</p>
+                                </div>
+                            </td>
+                            <td > 
+                                <div class="flex flex-col items-center">
+                                    <img src="img/Tipo_roca.gif" alt="">
+                                </div>
+                            </td>
+                            <td>Fila 2, Col 3</td>
+                            <td>Fila 2, Col 4</td>
+                        </tr>
+
+                        <tr>
+                            <td class="bg-yellow-200 text-center">
+                                <div class="flex flex-col items-center">
+                                    <img src="img/165px-VS_Teniente_Surge_Masters.png" alt="">
+                                    <p>Teniente Surge</p>
+                                </div>
+                            </td>
+                            <td > 
+                                <div class="flex flex-col items-center">
+                                    <img src="img/Tipo_roca.gif" alt="">
+                                </div>
+                            </td>
+                            <td>Fila 3, Col 3</td>
+                            <td>Fila 3, Col 4</td>
+                        </tr>
+
+                        <tr>
+                            <td class="bg-green-300 text-center">
+                                <div class="flex flex-col items-center">
+                                    <img src="img/165px-VS_Erika_Masters.png" alt="">
+                                    <p>Erika</p>
+                                </div>
+                            </td>
+                            <td > 
+                                <div class="flex flex-col items-center">
+                                    <img src="img/Tipo_roca.gif" alt="">
+                                </div>
+                            </td>
+                            <td>Fila 4, Col 3</td>
+                            <td>Fila 4, Col 4</td>
+                        </tr>
+
+                        <tr>
+                            <td class="bg-violet-400 text-center">
+                                <div class="flex flex-col items-center">
+                                    <img src="img/165px-VS_Koga_Masters.png" alt="">
+                                    <p>Koga</p>
+                                </div>
+                            </td>
+                            <td > 
+                                <div class="flex flex-col items-center">
+                                    <img src="img/Tipo_roca.gif" alt="">
+                                </div>
+                            </td>
+                            <td>Fila 5, Col 3</td>
+                            <td>Fila 5, Col 4</td>
+                        </tr>
+
+                        <tr>
+                            <td class="bg-red-300 text-center">
+                                <div class="flex flex-col items-center">
+                                    <img src="img/165px-VS_Sabrina_Masters.png" alt="">
+                                    <p>Sabrina</p>
+                                </div>
+                            </td>
+                            <td > 
+                                <div class="flex flex-col items-center">
+                                    <img src="img/Tipo_roca.gif" alt="">
+                                </div>
+                            </td>
+                            <td>Fila 6, Col 3</td>
+                            <td>Fila 6, Col 4</td>
+                        </tr>
+
+                        <tr>
+                            <td class="bg-red-500 text-center">
+                                <div class="flex flex-col items-center">
+                                    <img src="img/165px-VS_Blaine_Masters.png" alt="">
+                                    <p>Blaine</p>
+                                </div>
+                            </td>
+                            <td > 
+                                <div class="flex flex-col items-center">
+                                    <img src="img/Tipo_roca.gif" alt="">
+                                </div>
+                            </td>
+                            <td>Fila 7, Col 3</td>
+                            <td>Fila 7, Col 4</td>
+                        </tr>
+
+                        <tr>
+                            <td class="bg-stone-500 text-center">
+                                <div class="flex flex-col items-center">
+                                    <img src="img/165px-VS_Giovanni_(Kanto)_Masters.png" alt="">
+                                    <p>Giovanni</p>
+                                </div>
+                            </td>
+                            <td > 
+                                <div class="flex flex-col items-center">
+                                    <img src="img/Tipo_roca.gif" alt="">
+                                </div>
+                            </td>
+
+                            <td>Fila 8, Col 3</td>
+                            <td>Fila 8, Col 4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </section>
+        
+        <script src="js/metodos.js"></script>
+
+    </div>
+    <hr>
+
+    <footer class=" bg-slate-800 dark:bg-stone-950 text-black dark:text-white transition-colors duration-500 border-2 py-8">
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 text-center lg:text-left">
+            
+            <!-- Columna 1: Redes Sociales -->
+            <div class="flex flex-col items-center lg:items-center">
+                <h3 class="text-lg font-bold mb-4">Síguenos</h3>
+                <div class="flex space-x-4 justify-center">
+                    <a href="#" class="hover:text-yellow-500">
+                        <img src="img/facebook.png" alt="Facebook" class="h-8">
+                    </a>
+                    <a href="#" class="hover:text-yellow-500">
+                        <img src="img/gorjeo.png" alt="Twitter" class="h-8">
+                    </a>
+                    <a href="#" class="hover:text-yellow-500">
+                        <img src="img/instagram.png" alt="Instagram" class="h-8">
+                    </a>
+                    <a href="#" class="hover:text-yellow-500">
+                        <img src="img/youtube.png" alt="YouTube" class="h-8">
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Columna 2: Contacto y Derechos Reservados -->
+            <div class="flex flex-col items-center lg:items-center">
+                <h3 class="text-lg font-bold mb-4">Contacto</h3>
+                <p class="text-sm">Teléfono: (555) 123-4567</p>
+                <p class="text-sm">Email: info@tiendacelulares.com</p>
+            </div>
+        </div>
+        <div class="justify-center items-center text-center">
+            <p class="mt-4 text-gray-400">&copy; 2024 Pokemon. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

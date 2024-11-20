@@ -1,0 +1,76 @@
+/* Custom styles for character transitions */
+.characters img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.characters img.active {
+    opacity: 1;
+}
+/* Background torus for character section */
+.torus-background {
+    position: relative;
+    width: 100%; /* Ajuste responsivo para ancho completo en móvil */
+    max-width: 600px; /* Tamaño máximo para evitar que sea muy grande en pantallas grandes */
+    height: auto;
+    background-image: url('img/3.png'); /* Nombre de tu imagen */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto; /* Centramos el torus */
+    padding-top: 60%; /* Truco para mantener la proporción de la imagen */
+}
+
+/* Adjust buttons for better positioning on mobile */
+#prev, #next {
+    font-size: 3rem; /* Ajusta el tamaño del texto */
+}
+
+/* Media Queries for mobile optimizations */
+@media (min-width: 768px) {
+    .characters img {
+        width: 50%; /* Aumentar el tamaño en pantallas más grandes */
+    }
+    .torus-background {
+        max-width: 900px; /* Ajustar para pantallas más grandes */
+        padding-top: 40%; /* Ajuste de proporción para pantallas grandes */
+    }
+}
+
+.fixed {
+    position: fixed; /* Mantiene el menú fijo en la parte superior */
+    top: 0; /* Se posiciona en la parte superior de la ventana */
+    left: 0;
+    right: 0;
+    z-index: 10; /* Asegura que el menú esté por encima de otros elementos */
+}
+
+
+.table-container {
+    overflow-x: auto; /* Permite desplazamiento horizontal en pantallas pequeñas */
+}
+
+.centered-table {
+    border-collapse: collapse; /* Colapsa bordes de la tabla */
+    width: 80%; /* Ancho de la tabla */
+    max-width: 1000px; /* Máximo ancho de la tabla */
+    margin: auto; /* Centra la tabla */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+th, td {
+    border: 1px solid #dddddd; /* Bordes de las celdas */
+    text-align: center; /* Alineación del texto en el centro */
+    padding: 8px; /* Espaciado interno */
+}
+
+th {
+    color: white; /* Color de texto para encabezados */
+}
+
+
